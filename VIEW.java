@@ -20,6 +20,7 @@ public class VIEW extends JFrame implements ActionListener
     private JButton starten;
     private JLabel label2;
     private JLabel titel;
+    private JLabel label3;
     // Ergänze das fehlende Referenzattribut
     
 
@@ -37,9 +38,9 @@ public class VIEW extends JFrame implements ActionListener
         
         titel = new JLabel();
         titel.setText("Stickman Fight");
-        titel.setLocation(450,100);
+        titel.setLocation(400,0);
         titel.setSize(900,400);
-        titel.setFont(titel.getFont().deriveFont(55f));
+        titel.setFont(titel.getFont().deriveFont(70f));
         
         button = new JButton();
         button.setText("Enter");
@@ -69,6 +70,12 @@ public class VIEW extends JFrame implements ActionListener
         label2 = new JLabel(stickman1);
         label2.setLocation(700, 100);
         label2.setSize(900, 800);
+        
+        
+        ImageIcon stickman2 = new ImageIcon("Stickman2.png");
+        
+        label3 = new JLabel(stickman2);
+        
         
         // Hefte den AktionListener an den Button an
         button.addActionListener(this);
