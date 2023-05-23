@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=MINUSSYMBOL
+comment1.params=
+comment1.target=MINUSSYMBOL()
+comment1.text=\r\n\ Standardkonstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ MINUSSYMBOL.\r\n\ Die\ Methode\ paintComponent\ wird\ \u00FCberschrieben.\ Das\ Minussymbol\ wird\ gezeichnet.\r\n
+comment2.params=g
+comment2.target=void\ paintComponent(java.awt.Graphics)
+numComments=3

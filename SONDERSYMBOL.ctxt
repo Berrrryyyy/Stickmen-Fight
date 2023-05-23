@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=SONDERSYMBOL
+comment0.text=\r\n\ Das\ Symbol\ wird\ in\ der\ Swing-Komponente\ JComponent\ dargestellt.\ Die\ Groesse\ wird\ festgelegt.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
+comment1.params=
+comment1.target=SONDERSYMBOL()
+comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ SONDERSYMBOL\r\n
+comment2.params=
+comment2.target=javax.swing.JComponent\ gibKomponente()
+comment2.text=\r\n\ R\u00FCckgabe\ der\ Komponente,\ in\ der\ das\ Symbol\ dargestellt\ wird.\r\n\ @return\ die\ Komponente\r\n
+numComments=3

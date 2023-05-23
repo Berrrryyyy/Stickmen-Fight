@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=STARTFENSTER
+comment0.text=\r\n\ Eine\ grafische\ Benutzeroberfl\u00E4che.\r\n\r\n\ @author\ xy\r\n\ @version\ 1.0\r\n
+comment1.params=
+comment1.target=STARTFENSTER()
+comment1.text=\r\n\ Standardkonstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ STARTFENSTER.\r\n\ Die\ Komponenten\ werden\ hinzugef\u00FCgt.\r\n
+comment2.params=
+comment2.target=void\ FensterAufbauenV1()
+comment2.text=\r\n\ Die\ Komponenten\ f\u00FCr\ Version\ 1\ werden\ in\ das\ Fenster\ eingef\u00FCgt.\r\n
+comment3.params=
+comment3.target=void\ FensterAufbauenV2()
+comment3.text=\r\n\ Die\ Komponenten\ f\u00FCr\ Version\ 2\ werden\ in\ das\ Fenster\ eingef\u00FCgt.\r\n
+comment4.params=e
+comment4.target=void\ actionPerformed(java.awt.event.ActionEvent)
+numComments=5
