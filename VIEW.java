@@ -57,9 +57,9 @@ public class VIEW extends JFrame implements ActionListener
         starten.setEnabled(true);
         starten.setFont(button.getFont().deriveFont(35f));
         
-        ImageIcon schlange = new ImageIcon("Stickman1.png");
+        ImageIcon stickman1 = new ImageIcon("Stickman1.png");
         
-        label2 = new JLabel(schlange);
+        label2 = new JLabel(stickman1);
         label2.setLocation(10, 40);
         label2.setSize(900, 800);
         
