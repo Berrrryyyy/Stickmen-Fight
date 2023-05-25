@@ -67,7 +67,7 @@ public class VIEW extends JFrame implements ActionListener
         starten.setEnabled(true);
         starten.setFont(button.getFont().deriveFont(30f));
         starten.setBackground(new Color(255, 0, 0));
-        starten.setBorder(_border_)
+        //starten.setBorder(_border_)
         
         ImageIcon stickman1 = new ImageIcon("Stickman1.png");
         
