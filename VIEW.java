@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
+import java.awt.Color.*;
 // Importiere die erforderlichen Pakete 
 
 
@@ -21,6 +22,7 @@ public class VIEW extends JFrame implements ActionListener
     private JLabel label2;
     private JLabel titel;
     private JLabel label3;
+    
     // Ergänze das fehlende Referenzattribut
     
 
@@ -38,13 +40,13 @@ public class VIEW extends JFrame implements ActionListener
         
         titel = new JLabel();
         titel.setText("Stickman Fight");
-        titel.setLocation(400,0);
+        titel.setLocation(350,0);
         titel.setSize(900,400);
         titel.setFont(titel.getFont().deriveFont(70f));
         
         button = new JButton();
         button.setText("Enter");
-        button.setLocation(750, 450);
+        button.setLocation(700, 400);
         button.setSize (200, 40);
         button.setEnabled(true);
         button.setFont(button.getFont().deriveFont(40f));
@@ -52,7 +54,7 @@ public class VIEW extends JFrame implements ActionListener
         // Initialisiere und konfiguriere das Eingabefeld
         textfield = new JTextField();
         textfield.setText("");
-        textfield.setLocation(450, 450);
+        textfield.setLocation(400, 400);
         textfield.setSize(275, 40);
         textfield.setEnabled(true);
         textfield.setFont(text.getFont().deriveFont(32));
@@ -60,22 +62,25 @@ public class VIEW extends JFrame implements ActionListener
         
         starten = new JButton();
         starten.setText("Starten");
-        starten.setLocation(525, 550);
-        starten.setSize(200, 80);
+        starten.setLocation(490, 550);
+        starten.setSize(225, 100);
         starten.setEnabled(true);
         starten.setFont(button.getFont().deriveFont(30f));
+        starten.setBackground(new Color(255, 0, 0));
+        starten.setBorder(_border_)
         
         ImageIcon stickman1 = new ImageIcon("Stickman1.png");
         
         label2 = new JLabel(stickman1);
-        label2.setLocation(700, 100);
+        label2.setLocation(675, 100);
         label2.setSize(900, 800);
         
         
         ImageIcon stickman2 = new ImageIcon("Stickman2.png");
         
         label3 = new JLabel(stickman2);
-        
+        label3.setLocation(-250, 100);
+        label3.setSize(900, 800);
         
         // Hefte den AktionListener an den Button an
         button.addActionListener(this);
@@ -88,6 +93,7 @@ public class VIEW extends JFrame implements ActionListener
         super.add(starten);
         super.add(label2);
         super.add(titel);
+        super.add(label3);
         //Füge auch die dritte Komponente in das Fenster ein
 
        
@@ -110,6 +116,7 @@ public class VIEW extends JFrame implements ActionListener
         textfield.setVisible(true);
         starten.setVisible(true);
         titel.setVisible(true);
+        label3.setVisible(true);
     }
     /**
      * Die Komponenten für Version 2 werden in das Fenster eingefügt.
@@ -121,6 +128,7 @@ public class VIEW extends JFrame implements ActionListener
         starten.setVisible(false);
         label2.setVisible(false);
         titel.setVisible(false);
+        label3.setVisible(false);
         
         
     }
