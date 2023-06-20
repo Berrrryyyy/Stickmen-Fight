@@ -24,6 +24,8 @@ public class VIEW extends JFrame implements ActionListener
     private JLabel label3;
     private JLabel label4;
     private JLabel label5;
+    private JLabel highscore;
+    private int punkte;
     
     // Ergänze das fehlende Referenzattribut
     
@@ -73,14 +75,14 @@ public class VIEW extends JFrame implements ActionListener
         starten.setBackground(new Color(255, 0, 0));
         //starten.set
         
-        ImageIcon stickman1 = new ImageIcon("Stickman1.1.png");
+        ImageIcon stickman1 = new ImageIcon("Stickman1.3.2.png");
         
         label2 = new JLabel(stickman1);
         label2.setLocation(675, 100);
         label2.setSize(900, 800);
         
         
-        ImageIcon stickman2 = new ImageIcon("Stickman2.1.png");
+        ImageIcon stickman2 = new ImageIcon("Stickman2.3.2.png");
         
         label3 = new JLabel(stickman2);
         label3.setLocation(-250, 100);
@@ -99,6 +101,19 @@ public class VIEW extends JFrame implements ActionListener
         label5 = new JLabel(boden);
         label5.setLocation(0, 500);
         label5.setSize(1290, 250);
+         
+        
+        punkte = 0;
+        //System.out.println(punkte);
+        
+       
+        highscore = new JLabel();
+        highscore.setText("Highscore:" +punkte);
+        highscore.setLocation(5,-180);
+        highscore.setSize(750,400);
+        highscore.setFont(titel.getFont().deriveFont(35f));
+        highscore.setForeground(new Color(0, 0, 0));
+        
         
         // Hefte den AktionListener an den Button an
         button.addActionListener(this);
@@ -114,6 +129,7 @@ public class VIEW extends JFrame implements ActionListener
         super.add(label3);
         super.add(label4);
         super.add(label5);
+        super.add(highscore);
         //Füge auch die dritte Komponente in das Fenster ein
 
        
@@ -139,6 +155,7 @@ public class VIEW extends JFrame implements ActionListener
         label3.setVisible(true);
         label4.setVisible(true);
         label5.setVisible(true);
+        
     }
     /**
      * Die Komponenten für Version 2 werden in das Fenster eingefügt.
@@ -153,6 +170,7 @@ public class VIEW extends JFrame implements ActionListener
         label3.setVisible(false);
         label4.setVisible(false);
         label5.setVisible(true);
+        highscore.setVisible(true);
     }
     
     public void actionPerformed (ActionEvent e){
