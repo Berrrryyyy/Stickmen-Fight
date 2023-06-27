@@ -75,14 +75,14 @@ public class VIEW extends JFrame implements ActionListener
         starten.setBackground(new Color(255, 0, 0));
         //starten.set
         
-        ImageIcon stickman1 = new ImageIcon("Stickman1.3.2.png");
+        ImageIcon stickman1 = new ImageIcon("Stickmen1.3.2.png");
         
         label2 = new JLabel(stickman1);
         label2.setLocation(675, 100);
         label2.setSize(900, 800);
         
         
-        ImageIcon stickman2 = new ImageIcon("Stickman2.3.2.png");
+        ImageIcon stickman2 = new ImageIcon("Stickmen2.3.2.png");
         
         label3 = new JLabel(stickman2);
         label3.setLocation(-250, 100);
@@ -113,6 +113,7 @@ public class VIEW extends JFrame implements ActionListener
         highscore.setSize(750,400);
         highscore.setFont(titel.getFont().deriveFont(35f));
         highscore.setForeground(new Color(0, 0, 0));
+        
         
         
         // Hefte den AktionListener an den Button an
