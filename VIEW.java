@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 import java.awt.Color.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 // Importiere die erforderlichen Pakete 
 
 
@@ -12,7 +14,7 @@ import java.awt.Color.*;
  * @version 1.0
  */
 // Lass STARTFENSTER von JFrame erben, implementiere die Schnittstellen
-public class VIEW extends JFrame implements ActionListener
+public class VIEW extends JFrame implements ActionListener,KeyListener
 {
     
     private JLabel text;
@@ -26,6 +28,8 @@ public class VIEW extends JFrame implements ActionListener
     private JLabel label5;
     private JLabel highscore;
     private int punkte;
+    private JLabel label6;
+    private JLabel label7;
     
     // Ergänze das fehlende Referenzattribut
     
@@ -101,6 +105,23 @@ public class VIEW extends JFrame implements ActionListener
         label5 = new JLabel(boden);
         label5.setLocation(0, 500);
         label5.setSize(1290, 250);
+        
+        
+        ImageIcon stickman3 = new ImageIcon("Stickmen3.1.png");
+        
+        label6 = new JLabel(stickman3);
+        label6.setLocation(-300, -30);
+        label6.setSize(900, 800);
+        label6.addKeyListener(this);
+        label6.setFocusable(true);
+        label6.requestFocusInWindow();  
+        
+        ImageIcon stickman4 = new ImageIcon("Stickmen3.2.png");
+        
+        label7 = new JLabel(stickman4);
+        label7.setLocation(300, -35);
+        label7.setSize(900, 800);
+        
          
         
         punkte = 0;
@@ -130,6 +151,8 @@ public class VIEW extends JFrame implements ActionListener
         super.add(label3);
         super.add(label4);
         super.add(label5);
+        super.add(label6);
+        super.add(label7);
         super.add(highscore);
         //Füge auch die dritte Komponente in das Fenster ein
 
@@ -172,6 +195,8 @@ public class VIEW extends JFrame implements ActionListener
         label4.setVisible(false);
         label5.setVisible(true);
         highscore.setVisible(true);
+        label6.setVisible(true);
+         label6.setVisible(true);
     }
     
     public void actionPerformed (ActionEvent e){
@@ -185,4 +210,41 @@ public class VIEW extends JFrame implements ActionListener
             FensterAufbauenV2();
         }
     }
+    @Override   public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_UP) {
+            label6.setLocation(label6.getLocation().x, label6.getLocation().y - 5);
+            //label6.setText("oben");
+            //System.out.println("oben");
+        }
+        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            label6.setLocation(label6.getLocation().x, label6.getLocation().y + 5);
+            //label6.setText("unten");
+            //System.out.println("unten");
+        }
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            label6.setLocation(label6.getLocation().x - 5, label6.getLocation().y);
+            //label6.setText("links");
+            //System.out.println("links");
+        }
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            label6.setLocation(label6.getLocation().x + 5, label6.getLocation().y);
+            //label6.setText("rechts");
+            //System.out.println("rechts");
+        }
+        
+       
+        repaint();
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyTyped(KeyEvent ke) {
+        label6.setText("Du hast "+ke.getKeyChar()+ " getippt.");
+    }
+    
+    
 }
