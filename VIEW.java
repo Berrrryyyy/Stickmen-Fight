@@ -135,6 +135,13 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         highscore.setFont(titel.getFont().deriveFont(35f));
         highscore.setForeground(new Color(0, 0, 0));
         
+        final long time1 = System.currentTimeMillis();
+        System.out.println(time1);
+        final long time2 = System.currentTimeMillis();
+        System.out.println(time2);
+        
+        long punkte = time2-time1;
+        System.out.println(punkte);
         
         
         // Hefte den AktionListener an den Button an
