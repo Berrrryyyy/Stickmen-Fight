@@ -238,18 +238,6 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
             //label6.setText("rechts");
             //System.out.println("rechts");
         }
-        
-         //if (e.getKeyCode() == KeyEvent.VK_74) {
-           // label6.setVisible(false);
-           
-            
-           
-       // }
-       // if (e.getKeyCode() == KeyEvent.VK_75) {
-           // schlangenbild.setLocation(schlangenbild.getLocation().x+5, schlangenbild.getLocation().y );
-            
-       // }
-       
         repaint();
     }
 
