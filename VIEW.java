@@ -220,23 +220,19 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
     @Override   public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
             label6.setLocation(label6.getLocation().x, label6.getLocation().y - 5);
-            //label6.setText("oben");
-            //System.out.println("oben");
+            
         }
         if (e.getKeyCode() == KeyEvent.VK_DOWN) {
             label6.setLocation(label6.getLocation().x, label6.getLocation().y + 5);
-            //label6.setText("unten");
-            //System.out.println("unten");
+           
         }
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             label6.setLocation(label6.getLocation().x - 5, label6.getLocation().y);
-            //label6.setText("links");
-            //System.out.println("links");
+            
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             label6.setLocation(label6.getLocation().x + 5, label6.getLocation().y);
-            //label6.setText("rechts");
-            //System.out.println("rechts");
+           
         }
         repaint();
     }
