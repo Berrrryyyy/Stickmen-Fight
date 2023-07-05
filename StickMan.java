@@ -18,6 +18,7 @@ public class StickMan extends JFrame
     private int x,y;
     private JLabel label;
     private ImageIcon stickman_normal,stickman_box,stickman_down;
+    private String name = "";
     private int hits;
 
     /**
@@ -87,5 +88,13 @@ public class StickMan extends JFrame
     
     public int getHitCnt(){
         return hits;
+    }
+    
+    public void setName(String p1){
+        name = p1;
+    }
+    
+    public String getName(){
+        return name;
     }
 }

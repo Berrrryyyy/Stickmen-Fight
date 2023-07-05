@@ -11,7 +11,7 @@ import java.io.IOException;
 *  Passe die Klasse an dein Projekt an.
 *  
 */
-public class Daten extends VIEW {
+public class Daten {
 
     public void AllesAuslesen() {
         try {

@@ -40,7 +40,8 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
     private JLabel Player1;
     private JLabel Player2;
     // Ergänze das fehlende Referenzattribut
-    
+    private Daten myDaten;
+            
 
     /**
      * Standardkonstruktor für Objekte der Klasse STARTFENSTER.
@@ -48,6 +49,8 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
      */
     public VIEW()
     {
+        myDaten = new Daten();
+        
         text1 = new JLabel();
         text1.setText("PLAYER 1");
         text1.setLocation(750,350);
@@ -271,8 +274,10 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         {
             String name1 = textfield1.getText();
             text1.setText(name1 + " sei bereit!");
+            red.setName(name1);
             String name2 = textfield2.getText();
             text2.setText(name2 + " sei bereit!");
+            blue.setName(name2);
         }
         else if (e.getSource() == starten)
         {
@@ -342,6 +347,20 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
             
         }
         
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            
+        if (red.getName() != ""){
+            myDaten.DatensatzEinfuegen(red.getName() + " " + red.getHitCnt());
+        }
+        
+        
+        if (blue.getName() != ""){
+            myDaten.DatensatzEinfuegen(blue.getName() + " " + blue.getHitCnt());
+        }
+        
+        myDaten.AllesAuslesen();
+            System.exit(0);
+        }
         repaint();
     }
 

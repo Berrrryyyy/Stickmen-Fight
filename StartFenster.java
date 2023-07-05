@@ -8,19 +8,14 @@
 public class StartFenster
 {
     // instance variables - replace the example below with your own
-    private Daten myDaten;
+    VIEW myView;
 
     /**
      * Constructor for objects of class StartFenster
      */
     public StartFenster()
     {
-        myDaten = new Daten();
-        
-        
-        myDaten.DatensatzEinfuegen("Test1 100");
-        
-        myDaten.AllesAuslesen();
+        myView = new VIEW();
     }
 
     
