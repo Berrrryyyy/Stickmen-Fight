@@ -36,6 +36,9 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
     private int punkte;
     private JLabel label6;
     private JLabel label7;
+    private JLabel label8;
+    private JLabel label9;
+    private JLabel label10;
     private JLabel Player1;
     private JLabel Player2;
     // Ergänze das fehlende Referenzattribut
@@ -63,7 +66,7 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         
         titel = new JLabel();
         titel.setText("Stickman Fight");
-        titel.setLocation(400,-50);
+        titel.setLocation(350,-50);
         titel.setSize(900,400);
         titel.setFont(titel.getFont().deriveFont(70f));
         titel.setForeground(new Color(255, 255, 255));
@@ -101,7 +104,7 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         
         
         starten = new JButton();
-        starten.setText("Starten");
+        starten.setText("Play");
         starten.setLocation(550, 600);
         starten.setSize(200, 75);
         starten.setEnabled(true);
@@ -147,21 +150,47 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         ImageIcon stickman3 = new ImageIcon("Blue.Stickman.png");
         
         label6 = new JLabel(stickman3);
-        label6.setLocation(-300, -30);
+        label6.setLocation(-300, -45);
         label6.setSize(900, 800);
         label6.addKeyListener(this);
         label6.setFocusable(true);
         label6.requestFocusInWindow();  
         
+        ImageIcon stickman5 = new ImageIcon("Blue.Stickman.Boxing.1.2.png");
+        
+        label8 = new JLabel(stickman5);
+        label8.setLocation(-300, -45);
+        label8.setSize(900, 800);
+        label8.addKeyListener(this);
+        label8.setFocusable(true);
+        label8.requestFocusInWindow();  
+        
+        ImageIcon stickman6 = new ImageIcon("Blue.Stickmen.D.png");
+        
+        label9 = new JLabel(stickman6);
+        label9.setLocation(-300, -45);
+        label9.setSize(900, 800);
+        label9.addKeyListener(this);
+        label9.setFocusable(true);
+        label9.requestFocusInWindow(); 
+        
         ImageIcon stickman4 = new ImageIcon("Red.Stickman.1.1.png");
         
         label7 = new JLabel(stickman4);
-        label7.setLocation(800, -30);
+        label7.setLocation(700, -45);
         label7.setSize(900, 800);
         label7.addKeyListener(this);
         label7.setFocusable(true);
         label7.requestFocusInWindow();  
          
+        ImageIcon stickman7 = new ImageIcon("Red.Stickman.1.1.png");
+        
+        label10 = new JLabel(stickman4);
+        label10.setLocation(700, -45);
+        label10.setSize(900, 800);
+        label10.addKeyListener(this);
+        label10.setFocusable(true);
+        label10.requestFocusInWindow();  
         
         punkte = 0;
         //System.out.println(punkte);
@@ -206,6 +235,8 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         super.add(label5);
         super.add(label6);
         super.add(label7);
+        super.add(label8);
+        super.add(label9);
         super.add(highscore);
         super.add(Player1);
         //Füge auch die dritte Komponente in das Fenster ein
@@ -262,7 +293,9 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         label5.setVisible(true);
         highscore.setVisible(true);
         label6.setVisible(true);
-        label6.setVisible(true);
+        label7.setVisible(true);
+        label8.setVisible(false);
+        label9.setVisible(false);
     }
     
     public void actionPerformed (ActionEvent e){
@@ -318,7 +351,7 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
             //label6.setText("rechts");
             //System.out.println("rechts");
 
-            label7.setLocation(label7.getLocation().x + 20, label7.getLocation().y);
+            //label7.setLocation(label7.getLocation().x + 20, label7.getLocation().y);
            
 
         }
@@ -329,6 +362,26 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         if (e.getKeyCode() == KeyEvent.VK_D) {
             label6.setLocation(label6.getLocation().x + 20, label6.getLocation().y);
            
+        }
+        if (e.getKeyCode() == KeyEvent.VK_F) {
+            label8.setLocation(label6.getLocation().x +1,label6.getLocation().y -40);
+            label6.setVisible(false);
+            label8.setVisible(true);
+        }
+         if (e.getKeyCode() == KeyEvent.VK_V) {
+            label6.setLocation(label8.getLocation().x -1,label8.getLocation().y +40);
+            label8.setVisible(false);
+            label6.setVisible(true);
+        }
+        if (e.getKeyCode() == KeyEvent.VK_B) {
+            label6.setLocation(label9.getLocation().x ,label9.getLocation().y -50 );
+            label9.setVisible(false);
+            label6.setVisible(true);
+        }
+         if (e.getKeyCode() == KeyEvent.VK_G) {
+            label9.setLocation(label6.getLocation().x ,label6.getLocation().y +50 );
+            label6.setVisible(false);
+            label9.setVisible(true);
         }
         repaint();
     }
