@@ -28,7 +28,7 @@ public class Daten extends VIEW {
                 String[] split=text.split(";");                //hier wird die Zeile zerlegt als Trennzeichen ; 
                 for (String word : split) {
                     String[] zeile = word.split(" ");
-                    System.out.println("Vorname: " + zeile[0] + "   Nachname: " + zeile[1]+ "   Alter: " +zeile[2]+ "    Punkte: " + zeile[3]);
+                    System.out.println("Name: " + zeile[0] + " Punkte: " + zeile[1]);
                 }
 
             }
@@ -103,8 +103,8 @@ public class Daten extends VIEW {
      */
     public void DatensatzEinfuegen(String daten){
         
-        // Beispiel für "daten" im Format Vorname Nachname Alter Punkte
-        //String daten = "Nils Einhorn 11 1000" + inhalt;
+        // Beispiel für "daten" im Format Name Punkte
+        //String daten = "Nils 1000" + inhalt;
 
         String inhalt="";
              try {
@@ -125,7 +125,7 @@ public class Daten extends VIEW {
             e.printStackTrace();
         }
         // Neuen Datensatz an bereits enthaltene Datensätze anhängen
-        inhalt = inhalt +"; "+ daten;
+        inhalt = inhalt +";"+ daten;
         
         try (FileWriter writer = new FileWriter("TestdatenStrichpunkt.txt");
         BufferedWriter bw = new BufferedWriter(writer)) {

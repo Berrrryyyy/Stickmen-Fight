@@ -16,6 +16,10 @@ public class StartFenster
     public StartFenster()
     {
         myDaten = new Daten();
+        
+        
+        myDaten.DatensatzEinfuegen("Test1 100");
+        
         myDaten.AllesAuslesen();
     }
 
