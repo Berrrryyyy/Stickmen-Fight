@@ -39,6 +39,7 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
     private JLabel label8;
     private JLabel label9;
     private JLabel label10;
+    private JLabel label11;
     private JLabel Player1;
     private JLabel Player2;
     // Ergänze das fehlende Referenzattribut
@@ -183,14 +184,23 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         label7.setFocusable(true);
         label7.requestFocusInWindow();  
          
-        ImageIcon stickman7 = new ImageIcon("Red.Stickman.1.1.png");
+        ImageIcon stickman7 = new ImageIcon("Red.Stickman.Boxing.1.2.png");
         
-        label10 = new JLabel(stickman4);
+        label10 = new JLabel(stickman7);
         label10.setLocation(700, -45);
         label10.setSize(900, 800);
         label10.addKeyListener(this);
         label10.setFocusable(true);
-        label10.requestFocusInWindow();  
+        label10.requestFocusInWindow(); 
+        
+         ImageIcon stickman8 = new ImageIcon("Red.Stickman.D.Stickmen.D.png");
+        
+        label11 = new JLabel(stickman8);
+        label11.setLocation(700, -45);
+        label11.setSize(900, 800);
+        label11.addKeyListener(this);
+        label11.setFocusable(true);
+        label11.requestFocusInWindow();  
         
         punkte = 0;
         //System.out.println(punkte);
@@ -237,6 +247,8 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         super.add(label7);
         super.add(label8);
         super.add(label9);
+        super.add(label10);
+        super.add(label11);
         super.add(highscore);
         super.add(Player1);
         //Füge auch die dritte Komponente in das Fenster ein
@@ -296,6 +308,8 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         label7.setVisible(true);
         label8.setVisible(false);
         label9.setVisible(false);
+        label10.setVisible(false);
+        label11.setVisible(false);
     }
     
     public void actionPerformed (ActionEvent e){
@@ -341,6 +355,30 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
             //label6.setText("rechts");
             //System.out.println("rechts");
         }
+        if (e.getKeyCode() == KeyEvent.VK_O) {
+            label10.setLocation(label7.getLocation().x +1,label7.getLocation().y -40);
+            label7.setVisible(false);
+            label11.setVisible(false);
+            label10.setVisible(true);
+        }
+         if (e.getKeyCode() == KeyEvent.VK_K) {
+            label7.setLocation(label10.getLocation().x -1,label10.getLocation().y +40);
+            label10.setVisible(false);
+            label11.setVisible(false);
+            label7.setVisible(true);
+        }
+        if (e.getKeyCode() == KeyEvent.VK_L) {
+            label7.setLocation(label11.getLocation().x ,label11.getLocation().y -50 );
+            label11.setVisible(false);
+            label10.setVisible(false);
+            label7.setVisible(true);
+        }
+         if (e.getKeyCode() == KeyEvent.VK_P) {
+            label11.setLocation(label7.getLocation().x ,label7.getLocation().y +50 );
+            label7.setVisible(false);
+            label10.setVisible(false);
+            label11.setVisible(true);
+        }
         //if (e.getKeyCode() == KeyEvent.VK_A) {
           //  label6.setLocation(label6.getLocation().x - 15, label6.getLocation().y);
             //label6.setText("links");
@@ -366,21 +404,25 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         if (e.getKeyCode() == KeyEvent.VK_F) {
             label8.setLocation(label6.getLocation().x +1,label6.getLocation().y -40);
             label6.setVisible(false);
+            label9.setVisible(false);
             label8.setVisible(true);
         }
          if (e.getKeyCode() == KeyEvent.VK_V) {
             label6.setLocation(label8.getLocation().x -1,label8.getLocation().y +40);
             label8.setVisible(false);
+            label9.setVisible(false);
             label6.setVisible(true);
         }
         if (e.getKeyCode() == KeyEvent.VK_B) {
             label6.setLocation(label9.getLocation().x ,label9.getLocation().y -50 );
             label9.setVisible(false);
+            label8.setVisible(false);
             label6.setVisible(true);
         }
          if (e.getKeyCode() == KeyEvent.VK_G) {
             label9.setLocation(label6.getLocation().x ,label6.getLocation().y +50 );
             label6.setVisible(false);
+            label8.setVisible(false);
             label9.setVisible(true);
         }
         repaint();
