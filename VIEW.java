@@ -20,6 +20,7 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
     private JLabel text;
     private JButton button;
     private JTextField textfield;
+    private JTextField textfield2;
     private JButton starten;
     private JLabel label2;
     private JLabel titel;
@@ -30,7 +31,8 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
     private int punkte;
     private JLabel label6;
     private JLabel label7;
-    
+    private JLabel Player1;
+    private JLabel Player2;
     // Ergänze das fehlende Referenzattribut
     
 
@@ -56,7 +58,7 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         
         button = new JButton();
         button.setText("Enter");
-        button.setLocation(700, 500);
+        button.setLocation(550, 550);
         button.setSize (200, 40);
         button.setEnabled(true);
         button.setFont(button.getFont().deriveFont(40f));
@@ -64,20 +66,34 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         // Initialisiere und konfiguriere das Eingabefeld
         textfield = new JTextField();
         textfield.setText("");
-        textfield.setLocation(400, 500);
+        textfield.setLocation(720, 500);
         textfield.setSize(275, 40);
         textfield.setEnabled(true);
         textfield.setFont(text.getFont().deriveFont(32));
         
+        textfield2 = new JTextField();
+        textfield2.setText("");
+        textfield2.setLocation(320, 500);
+        textfield2.setSize(275, 40);
+        textfield2.setEnabled(true);
+        textfield2.setFont(text.getFont().deriveFont(32));
+        
         
         starten = new JButton();
         starten.setText("Starten");
-        starten.setLocation(550, 575);
+        starten.setLocation(550, 600);
         starten.setSize(200, 75);
         starten.setEnabled(true);
         starten.setFont(button.getFont().deriveFont(30f));
         starten.setBackground(new Color(255, 0, 0));
         //starten.set
+        
+        Player1 = new JLabel();
+        Player1.setText("Wie heißt du?");
+        Player1.setLocation(200,600);
+        Player1.setSize (900, 200);       
+        Player1.setFont(text.getFont().deriveFont(46f));
+        Player1.setForeground(new Color(255, 255, 255));
         
         ImageIcon stickman1 = new ImageIcon("Stickmen1.3.2.png");
         
@@ -152,6 +168,7 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         super.add(text);
         super.add(button);
         super.add(textfield);
+        super.add(textfield2);
         super.add(starten);
         super.add(label2);
         super.add(titel);
@@ -161,6 +178,7 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         super.add(label6);
         super.add(label7);
         super.add(highscore);
+        super.add(Player1);
         //Füge auch die dritte Komponente in das Fenster ein
 
        
@@ -180,12 +198,14 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         button.setVisible(true);
         //Das Eingabefeld muss auf sichtbar gestellt werden
         textfield.setVisible(true);
+        textfield2.setVisible(true);
         starten.setVisible(true);
         label2.setVisible(true);
         titel.setVisible(true);
         label3.setVisible(true);
         label4.setVisible(true);
         label5.setVisible(true);
+        
         
     }
     /**
@@ -195,6 +215,7 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         text.setVisible(false);
         button.setVisible(false);
         textfield.setVisible(false);
+        textfield2.setVisible(false);
         starten.setVisible(false);
         label2.setVisible(false);
         titel.setVisible(false);
@@ -218,23 +239,33 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         }
     }
     @Override   public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_UP) {
-            label6.setLocation(label6.getLocation().x, label6.getLocation().y - 5);
+        //if (e.getKeyCode() == KeyEvent.VK_UP) {
+          //  label6.setLocation(label6.getLocation().x, label6.getLocation().y - 5);
             //label6.setText("oben");
             //System.out.println("oben");
-        }
-        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            label6.setLocation(label6.getLocation().x, label6.getLocation().y + 5);
+        //}
+        //if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+          //  label6.setLocation(label6.getLocation().x, label6.getLocation().y + 5);
             //label6.setText("unten");
             //System.out.println("unten");
-        }
+        //}
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            label6.setLocation(label6.getLocation().x - 5, label6.getLocation().y);
+            label7.setLocation(label7.getLocation().x - 15, label7.getLocation().y);
             //label6.setText("links");
             //System.out.println("links");
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            label6.setLocation(label6.getLocation().x + 5, label6.getLocation().y);
+            label7.setLocation(label7.getLocation().x + 15, label7.getLocation().y);
+            //label6.setText("rechts");
+            //System.out.println("rechts");
+        }
+        if (e.getKeyCode() == KeyEvent.VK_A) {
+            label6.setLocation(label6.getLocation().x - 15, label6.getLocation().y);
+            //label6.setText("links");
+            //System.out.println("links");
+        }
+        if (e.getKeyCode() == KeyEvent.VK_D) {
+            label6.setLocation(label6.getLocation().x + 15, label6.getLocation().y);
             //label6.setText("rechts");
             //System.out.println("rechts");
         }
@@ -260,7 +291,7 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
 
     @Override
     public void keyTyped(KeyEvent ke) {
-        label6.setText("Du hast "+ke.getKeyChar()+ " getippt.");
+        
     }
     
     
