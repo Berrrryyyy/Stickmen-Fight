@@ -341,20 +341,20 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
             //label6.setText("rechts");
             //System.out.println("rechts");
         }
-        if (e.getKeyCode() == KeyEvent.VK_A) {
-            label6.setLocation(label6.getLocation().x - 15, label6.getLocation().y);
+        //if (e.getKeyCode() == KeyEvent.VK_A) {
+          //  label6.setLocation(label6.getLocation().x - 15, label6.getLocation().y);
             //label6.setText("links");
             //System.out.println("links");
-        }
-        if (e.getKeyCode() == KeyEvent.VK_D) {
-            label6.setLocation(label6.getLocation().x + 15, label6.getLocation().y);
+        //}
+        //if (e.getKeyCode() == KeyEvent.VK_D) {
+          //  label6.setLocation(label6.getLocation().x + 15, label6.getLocation().y);
             //label6.setText("rechts");
             //System.out.println("rechts");
 
             //label7.setLocation(label7.getLocation().x + 20, label7.getLocation().y);
            
 
-        }
+        //}
         if (e.getKeyCode() == KeyEvent.VK_A) {
             label6.setLocation(label6.getLocation().x - 20, label6.getLocation().y);
             
