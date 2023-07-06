@@ -155,8 +155,7 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         red.getLabel().addKeyListener(this);
         
         
-        punkte = 0;
-        //System.out.println(punkte);
+       
         
        
         highscore = new JLabel();
@@ -166,13 +165,7 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         highscore.setFont(titel.getFont().deriveFont(35f));
         highscore.setForeground(new Color(0, 0, 0));
         
-        final long time1 = System.currentTimeMillis();
-        //System.out.println(time1);
-        final long time2 = System.currentTimeMillis();
-        //System.out.println(time2);
         
-        long punkte = time2-time1;
-        //System.out.println(punkte);
         
         
         // Hefte den AktionListener an den Button an
@@ -336,9 +329,9 @@ public class VIEW extends JFrame implements ActionListener,KeyListener
         if (e.getKeyCode() == KeyEvent.VK_B) {
             blue.setPos(blue.getPosX() , blue.getPosY() );
             blue.setImage(2);
-            if (blue.getPosX() < red.getPosX() - 105 ){
+            if (blue.getPosX() > red.getPosX() - 105 ){
                 blue.incHitCnt();
-                highscore.setText("Highscore:" + blue.getHitCnt() + " : " + red.getHitCnt());
+                highscore.setText("Highscore: blue " + blue.getHitCnt() + " : red " + red.getHitCnt());
             }
         }
          if (e.getKeyCode() == KeyEvent.VK_G) {
